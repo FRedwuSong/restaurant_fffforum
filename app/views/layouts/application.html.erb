@@ -9,9 +9,6 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-
     <% if current_user %>
       Hi, <%= current_user.email %>
       <%= link_to('登出', destroy_user_session_path, method: :delete) %> |
@@ -21,7 +18,8 @@
       <%= link_to('登入', new_user_session_path) %>
     <% end %>
 
-    
     <%= yield %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
   </body>
 </html>
